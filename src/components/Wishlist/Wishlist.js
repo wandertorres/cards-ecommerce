@@ -2,11 +2,11 @@ import { useState } from 'react';
 import './Wishlist.css';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 
-export default function Wishlist ({id}) {
+export default function Wishlist ({id, handleSaved}) {
     const [active, setActive] = useState(false);
     const [className, setClassName] = useState('wishlist');
 
-    function changeWishlist() {
+    const changeWishlist = (id) => {
         setActive(!active);
 
         if(active) {
@@ -14,10 +14,12 @@ export default function Wishlist ({id}) {
         } else {
             setClassName('wishlist active2');
         }
+
+        handleSaved(id);
     }
 
     return (
-        <div className={className}  onClick={changeWishlist}>
+        <div className={className}  onClick={() => changeWishlist(id)}>
             <span className='heart'>
                 {active ? <FaHeart /> : <FaRegHeart />}
             </span>

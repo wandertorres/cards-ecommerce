@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Button.css';
 import { FaCheck } from 'react-icons/fa';
 
-export default function Button ({id, handleSaved}) {
+export default function Button ({id, handleCart}) {
     const [active, setActive] = useState(false);
     const [className, setClassName] = useState('button');
     const [title, setTitle] = useState('Adicionar');
@@ -18,7 +18,7 @@ export default function Button ({id, handleSaved}) {
             setClassName('button active');
         }
 
-        handleSaved(id);
+        handleCart(id);
     }
 
     return (

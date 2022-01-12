@@ -3,13 +3,13 @@ import Button from '../Button/Button';
 import Wishlist from '../Wishlist/Wishlist';
 import './Card.css';
 
-export default function Card ({product, handleSaved}) {
+export default function Card ({product, handleSaved, handleCart}) {
 
     return (
         <div className="card">
             <div className='image'>
                 <img src={img} className='img' alt='Imagem doProduto' />
-                <Wishlist />
+                <Wishlist id={product.id} handleSaved={handleSaved}  />
             </div>
             <div className='content'>
                 <span className='description'>{product.description}</span>
@@ -27,7 +27,7 @@ export default function Card ({product, handleSaved}) {
                 </div>
             </div>
             
-        <Button id={product.id} handleSaved={handleSaved} />
+        <Button id={product.id} handleCart={handleCart} />
         </div>
   );
 }
