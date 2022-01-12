@@ -1,14 +1,11 @@
-import Button from '../Button/Button';
-import Wishlist from '../Wishlist/Wishlist';
-import './Card.css';
+import './CardDetails.css';
 
-export default function Card ({product, handleSaved, handleCart}) {
+export default function CardDetails ({product}) {
 
     return (
         <div className="card">
             <div className='image'>
                 <img src={product.urlImage} className='img' alt='Imagem doProduto' />
-                <Wishlist id={product.id} handleSaved={handleSaved}  />
             </div>
             <div className='content'>
                 <span className='description'>{product.description}</span>
@@ -24,8 +21,6 @@ export default function Card ({product, handleSaved, handleCart}) {
                     </span>
                 </div>
             </div>
-            
-        <Button id={product.id} handleCart={handleCart} />
         </div>
   );
 }

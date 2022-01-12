@@ -1,0 +1,89 @@
+.card {
+    margin: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 32px;
+    min-height: 400px;
+}
+
+.card:hover {
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.image {
+    display: flex;
+    position: relative;
+}
+
+.img {
+    width: 240px;
+    height: 240px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+}
+
+.description {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1C1C1C;
+    margin-top: 32px;
+    min-height: 60px;
+}
+
+.price {
+    font-family: Inter;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 24px;
+}
+
+.ant {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.005em;
+    text-decoration-line: line-through;
+
+    /* grayscale/600 */
+    color: #B5B5B6;
+}
+
+.atu {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.005em;
+
+    /* red/500 */
+    color: #DA4B4F;
+}
+
+.pag {
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.005em;
+
+    /* grayscale/700 */
+    color: #848587;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import db from './services/db';
 import Card from './components/Card/Card';
+import CardDetails from './components/CardDetails/CardDetails';
 
 export default function App() {
 
@@ -55,13 +56,13 @@ export default function App() {
       <h2>Produtos salvos</h2>
       <div className='divCard'>
         {listSaved.map((item, key) => 
-          <Card key={key} product={item} handleSaved={handleSaved} handleCart={handleCart} />)}
+          <CardDetails key={key} product={item} />)}
       </div>
 
       <h2>Carrinho</h2>
       <div className='divCard'>
         {cart.map((item, key) => 
-          <Card key={key} product={item} handleSaved={handleSaved} handleCart={handleCart} />)}
+          <CardDetails key={key} product={item} />)}
       </div>
     </div>
   );
