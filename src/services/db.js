@@ -5,7 +5,7 @@ export default [
         formPayment: 10,
         currentPrice: 2599.00,
         previousPrice: 2813.99,
-        urlImage: '../img/image.png'
+        urlImage: '../img/image2.png'
     },
     {
         id: 2,
@@ -13,6 +13,6 @@ export default [
         formPayment: 10,
         currentPrice: 599.00,
         previousPrice: 813.99,
-        urlImage: '../img/image.png'
+        urlImage: 'image.png'
     }
 ];

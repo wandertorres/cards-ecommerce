@@ -1,16 +1,21 @@
 .button {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    color: #FFFFFF; 
+    background: #40B25C; 
+    border: none; 
     cursor: pointer;
-    /* Auto layout */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 32px;
-
     width: 240px;
     height: 48px;
-
-    /* green/400 */
-    background: #40B25C;
     border-radius: 5px;
 }
 
@@ -18,16 +23,12 @@
     background: #1C6C3E;
 }
 
-.btn {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    /* identical to box height, or 150% */
-    letter-spacing: -0.005em;
-    text-transform: uppercase;
+.active {
+    background: #A3F9B9;
+    color: #1C1C1C;
+}
 
-    /* grayscale/0 */
-    color: #FFFFFF;   
+.active:hover {
+    background: #40B25C; 
+    color: #fff;
 }

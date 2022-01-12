@@ -21,7 +21,7 @@ function Card({product}) {
                 </span>
             </div>
         </div>
-        <Button />
+        <Button id={product.id}/>
     </div>
   );
 }
