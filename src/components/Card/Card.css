@@ -1,0 +1,179 @@
+.card {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    width: 304px;
+    left: 160px;
+    top: 228px;
+
+    /* grayscale/0 */
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding-bottom: 32px;
+}
+
+.image {
+    display: flex;
+    position: relative;
+    width: 240px;
+    height: 240px;
+    margin: 32px 32px 0 32px; 
+}
+
+.img {
+    width: 240px;
+    height: 240px;
+
+}
+
+.wishlist {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 190px;
+    border-radius: 50%;
+    border: none;
+
+
+
+    /* Ellipse 1 
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    /* grayscale/200 
+    background: #F2F3F6;
+
+
+    /* Vector 
+
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 31.25%;
+    bottom: 25%;
+
+    /* grayscale/200 */
+    background: #F2F3F6;
+    /* grayscale/900 */
+}
+
+.heart {
+    margin: auto;
+}
+
+.content {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 32px;
+
+    width: 240px;
+}
+
+/* Monitor LED 27'' Gamer Curvo Samsung 1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50 */
+.description {
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+    /* grayscale/900 */
+    color: #1C1C1C;
+}
+
+.price {
+/* Auto layout */
+    font-family: Inter;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 24px;
+}
+
+/* R$ 2.813,99 */
+.ant {
+    
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    letter-spacing: -0.005em;
+    text-decoration-line: line-through;
+
+    /* grayscale/600 */
+    color: #B5B5B6;
+}
+
+.atu {
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height, or 120% */
+    letter-spacing: -0.005em;
+
+    /* red/500 */
+    color: #DA4B4F;
+}
+
+.pag {
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.005em;
+
+    /* grayscale/700 */
+    color: #848587;
+}
+
+.button {
+    cursor: pointer;
+    /* Auto layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+
+    width: 240px;
+    height: 48px;
+
+    /* green/400 */
+    background: #40B25C;
+    border-radius: 5px;
+}
+
+.btn {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+
+    /* grayscale/0 */
+    color: #FFFFFF;   
+}
