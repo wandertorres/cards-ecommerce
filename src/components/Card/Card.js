@@ -8,7 +8,7 @@ export default function Card ({product, handleSaved, handleCart}) {
     return (
         <div className="card">
             <div className='image'>
-                <img src={img} className='img' alt='Imagem doProduto' />
+                <img src={product.urlImage} className='img' alt='Imagem doProduto' />
                 <Wishlist id={product.id} handleSaved={handleSaved}  />
             </div>
             <div className='content'>
@@ -21,8 +21,7 @@ export default function Card ({product, handleSaved, handleCart}) {
                         R$ {parseFloat(product.currentPrice).toFixed(2)}
                     </span>
                     <span className='pag'>
-                        em até {product.formPayment}x de 
-                        {product.currentPrice/product.formPayment} sem juros
+                        em até {product.formPayment}x de {product.currentPrice/product.formPayment} sem juros
                     </span>
                 </div>
             </div>

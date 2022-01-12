@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import api from './services/api';
+import db from './services/db';
 import Card from './components/Card/Card';
 
 export default function App() {
@@ -36,7 +36,7 @@ export default function App() {
   }
 
   const loadProducts = async () => {
-    let list = await api.productsFetch();
+    let list = db;
     setProductList(list);
   }
 

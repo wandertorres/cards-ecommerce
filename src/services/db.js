@@ -5,15 +5,15 @@ const db = [
         formPayment: 10,
         currentPrice: 2599.00,
         previousPrice: 2813.99,
-        urlImage: '../img/image2.png'
+        urlImage: 'https://images-americanas.b2w.io/produtos/01/00/img/1515753/7/1515753749_1GG.jpg'
     },
     {
         id: 2,
-        description: 'Outro produto',
+        description: 'Computador Intel Core i5 Com Hdmi 8GB SSD 240GB Windows 10 Desktop',
         formPayment: 10,
-        currentPrice: 599.00,
-        previousPrice: 813.99,
-        urlImage: 'image.png'
+        currentPrice: 1487.07,
+        previousPrice: 1599.00,
+        urlImage: 'https://images-americanas.b2w.io/produtos/01/00/img/3062205/5/3062205546_1SZ.jpg'
     }
 ];
 
