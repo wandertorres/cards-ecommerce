@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { db } from './services/db.js';
 import api from './services/api';
 import Card from './components/Card/Card';
 

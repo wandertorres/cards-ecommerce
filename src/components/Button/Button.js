@@ -3,20 +3,22 @@ import './Button.css';
 
 export default ({id}) => {
     const [active, setActive] = useState(false);
-    const [title, setTitle] = useState('Adicionar')
+    const [className, setClassName] = useState('button');
+    const [title, setTitle] = useState('Adicionar');
 
     function changeButton() {
         setActive(!active);
-        !active ? setTitle('+ Adicionado') : setTitle('Adicionar');
+
+        if(active) {
+            setTitle('Adicionar'); 
+            setClassName('button');
+        } else {
+            setTitle('+ Adicionado');
+            setClassName('button active');
+        }
     }
 
     return (
-        <button 
-            className={`${active ? 'button active': 'button'}`} 
-            onClick={changeButton}>
-            {title}
-        </button>
+        <button className={className} onClick={changeButton}>{title}</button>
     );
 }
-
-
