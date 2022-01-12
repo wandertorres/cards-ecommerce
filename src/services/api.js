@@ -1,4 +1,4 @@
-import { db } from './db.js';
+import { db } from './db';
 
 /*export default function productsFetch() {
     const req = db;
@@ -8,11 +8,11 @@ import { db } from './db.js';
     return req;
 };*/
 
-const productsFetch = async () => {
-    const req = await fetch(db);
-    const json = await req.json();
+export default {
+    productsFetch: async () => {
+        //const req = await fetch(db);
+        //const json = await req.json();
 
-    return json;
-};
-
-export default productsFetch;
+        return db;
+    }
+}

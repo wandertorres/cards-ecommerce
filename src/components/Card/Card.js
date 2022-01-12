@@ -1,8 +1,7 @@
 import img from '../../img/image.png';
 import './Card.css';
 
-function Card({ product }) {
-    console.log(product)
+function Card({product}) {
   return (
     <div className="card">
         <div className='image'>
@@ -14,13 +13,13 @@ function Card({ product }) {
         <div className='content'>
             <span className='description'>{product.description}</span>
             <div className='price'>
-                <span className='ant'>R$ 2.813,99</span>
-                <span className='atu'>R$ 2.599,00</span>
-                <span className='pag'>em até 10x de R$ 259,90 sem juros</span>
+                <span className='ant'>R$ {parseFloat(product.previousPrice).toFixed(2)}</span>
+                <span className='atu'>R$ {parseFloat(product.currentPrice).toFixed(2)}</span>
+                <span className='pag'>{product.formPayment}</span>
             </div>
         </div>
         <div className='button'>
-            <div className='btn'>ADICIONAR</div>
+            <div className='btn'>Adicionar</div>
         </div>
     </div>
   );

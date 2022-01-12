@@ -1,19 +1,25 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { db } from './services/db.js';
-import Card from './components/Card/Card.js';
+import api from './services/api';
+import Card from './components/Card/Card';
 
 function App() {
 
-  const [list, setList] = useState([]);
+  const [listProducts, setProductList] = useState([]);
 
   useEffect(() => {
-    setList(db);
+    const loadProducts = async () => {
+      let list = await api.productsFetch();
+      setProductList(list);
+    }
+
+    loadProducts();
   }, []);
 
   return (
     <div className="App">
-      {list.map(product => <Card key={product.id} product={product} />)}
+      {listProducts.map((item, key) => <Card key={key} product={item} />)}
     </div>
   );
 }
