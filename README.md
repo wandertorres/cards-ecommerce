@@ -8,10 +8,10 @@ https://cards-ecommerce.herokuapp.com/
 
 ## Instruções de execução localmente
 
-1 - git clone https://github.com/wandertorres/cards-ecommerce.git
-2 - Entrar na pasta do projeto
-3 - Executar npm i
-4 - Executar npm start
+ - git clone https://github.com/wandertorres/cards-ecommerce.git
+ - Entrar na pasta do projeto
+ - Executar npm i
+ - Executar npm start
 
 ## Funcionalidades implementadas
 
