@@ -1,4 +1,5 @@
 import img from '../../img/image.png';
+import Button from '../Button/Button';
 import './Card.css';
 
 function Card({product}) {
@@ -20,9 +21,7 @@ function Card({product}) {
                 </span>
             </div>
         </div>
-        <div className='button'>
-            <div className='btn'>Adicionar</div>
-        </div>
+        <Button />
     </div>
   );
 }

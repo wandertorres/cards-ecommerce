@@ -123,37 +123,3 @@
     /* grayscale/700 */
     color: #848587;
 }
-
-.button {
-    cursor: pointer;
-    /* Auto layout */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 32px;
-
-    width: 240px;
-    height: 48px;
-
-    /* green/400 */
-    background: #40B25C;
-    border-radius: 5px;
-}
-
-.button:hover {
-    background: #1C6C3E;
-}
-
-.btn {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    /* identical to box height, or 150% */
-    letter-spacing: -0.005em;
-    text-transform: uppercase;
-
-    /* grayscale/0 */
-    color: #FFFFFF;   
-}
