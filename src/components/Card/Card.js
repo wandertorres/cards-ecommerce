@@ -1,17 +1,18 @@
 import img from '../../img/image.png';
 import './Card.css';
 
-function Card() {
+function Card({ product }) {
+    console.log(product)
   return (
     <div className="card">
         <div className='image'>
-            <img src={img} className='img' />
+            <img src={img} className='img' alt='Imagem doProduto' />
             <div className='wishlist'>
                 <span className='heart'>+</span>
             </div>
         </div>
         <div className='content'>
-            <span className='description'>Monitor LED 27'' Gamer Curvo Samsung  1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50</span>
+            <span className='description'>{product.description}</span>
             <div className='price'>
                 <span className='ant'>R$ 2.813,99</span>
                 <span className='atu'>R$ 2.599,00</span>
