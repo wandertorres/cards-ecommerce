@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './Button.css';
+import { FaCheck } from 'react-icons/fa';
 
-export default ({id}) => {
+export default function Button ({id}) {
     const [active, setActive] = useState(false);
     const [className, setClassName] = useState('button');
     const [title, setTitle] = useState('Adicionar');
@@ -13,12 +14,16 @@ export default ({id}) => {
             setTitle('Adicionar'); 
             setClassName('button');
         } else {
-            setTitle('+ Adicionado');
+            setTitle('Adicionado');
             setClassName('button active');
         }
     }
 
     return (
-        <button className={className} onClick={changeButton}>{title}</button>
+        <button className={className} onClick={changeButton}>
+            {active && 
+                <FaCheck />} 
+            {title}
+        </button>
     );
 }

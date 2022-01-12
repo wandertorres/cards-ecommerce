@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import Wishlist from '../Wishlist/Wishlist';
 import './Card.css';
 
-export default ({product}) => {
+export default function Card ({product}) {
   return (
     <div className="card">
         <div className='image'>

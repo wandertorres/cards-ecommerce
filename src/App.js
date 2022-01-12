@@ -3,7 +3,7 @@ import './App.css';
 import api from './services/api';
 import Card from './components/Card/Card';
 
-function App() {
+export default function App() {
 
   const [listProducts, setProductList] = useState([]);
 
@@ -22,5 +22,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

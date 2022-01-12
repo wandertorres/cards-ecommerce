@@ -1,37 +1,13 @@
 .wishlist {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
     position: absolute;
     width: 48px;
     height: 48px;
     left: 192px;
     border-radius: 50%;
     border: none;
-
-    /* Ellipse 1 
-
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-
-    /* grayscale/200 
+    
     background: #F2F3F6;
-
-
-    /* Vector 
-
-    position: absolute;
-    left: 25%;
-    right: 25%;
-    top: 31.25%;
-    bottom: 25%;
-
-    /* grayscale/200 */
-    background: #F2F3F6;
-    /* grayscale/900 */
 }
 
 .wishlist:hover {
@@ -39,10 +15,25 @@
     color: #DA4B4F;
 }
 
+.active2 {
+    background: #DA4B4F;
+    color: #fff;
+}
+
+.active2:hover {
+    background: #C22539; 
+    color: #fff;
+}
+
 .heart {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 29%;
+    bottom: 25%;
     font-size: 25px;
+}
+
+.active3 {
+    color: #fff;
 }
