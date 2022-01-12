@@ -1,12 +1,4 @@
-import { db } from './db';
-
-/*export default function productsFetch() {
-    const req = db;
-
-    console.log(req);
-
-    return req;
-};*/
+import db from './db';
 
 export default {
     productsFetch: async () => {

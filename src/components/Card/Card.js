@@ -15,7 +15,9 @@ function Card({product}) {
             <div className='price'>
                 <span className='ant'>R$ {parseFloat(product.previousPrice).toFixed(2)}</span>
                 <span className='atu'>R$ {parseFloat(product.currentPrice).toFixed(2)}</span>
-                <span className='pag'>{product.formPayment}</span>
+                <span className='pag'>
+                    em até {product.formPayment}x de {product.currentPrice/product.formPayment} sem juros
+                </span>
             </div>
         </div>
         <div className='button'>
