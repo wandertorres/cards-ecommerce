@@ -57,8 +57,6 @@
     line-height: 20px;
     letter-spacing: -0.005em;
     text-decoration-line: line-through;
-
-    /* grayscale/600 */
     color: #B5B5B6;
 }
 
@@ -69,8 +67,6 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -0.005em;
-
-    /* red/500 */
     color: #DA4B4F;
 }
 
@@ -81,9 +77,6 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    /* identical to box height, or 133% */
     letter-spacing: -0.005em;
-
-    /* grayscale/700 */
     color: #848587;
 }

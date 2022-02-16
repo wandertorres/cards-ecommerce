@@ -22,5 +22,5 @@ export default function CardDetails ({product}) {
                 </div>
             </div>
         </div>
-  );
+    );
 }
