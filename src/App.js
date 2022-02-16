@@ -45,24 +45,24 @@ export default function App() {
     }, []);
 
     return (
-        <div className="App">
+        <main>
             <h2>Todos os produtos</h2>
-            <div className='divCard'>
+            <section>
                 {listProducts.map((item, key) => 
                   <Card key={key} product={item} handleSaved={handleSaved} handleCart={handleCart} />)}
-            </div>
+            </section>
             
             <h2>Produtos salvos</h2>
-            <div className='divCard'>
+            <section>
                 {listSaved.map((item, key) => 
                   <CardDetails key={key} product={item} />)}
-            </div>
+            </section>
 
             <h2>Carrinho</h2>
-            <div className='divCard'>
+            <section>
                 {cart.map((item, key) => 
                   <CardDetails key={key} product={item} />)}
-            </div>
-        </div>
+            </section>
+        </main>
     );
 }

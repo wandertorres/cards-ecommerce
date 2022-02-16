@@ -6,12 +6,26 @@ Projeto desenvolvido com React
 
 https://cards-ecommerce.herokuapp.com/
 
-## Instruções de execução localmente
+## Instruções de executar localmente
+ - Clonar o projeto
+```bash
+git clone https://github.com/wandertorres/cards-ecommerce.git
+```
 
- - git clone https://github.com/wandertorres/cards-ecommerce.git
  - Entrar na pasta do projeto
- - Executar npm i
- - Executar npm start
+```bash
+cd cards-ecommerce/
+```
+
+ - Instalar dependências
+```bash
+npm i
+```
+
+ - Executar o projeto
+```bash
+Executar npm start
+```
 
 ## Funcionalidades implementadas
 

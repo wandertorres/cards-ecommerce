@@ -1,4 +1,5 @@
 .card {
+    font-family: Inter;
     margin: 32px;
     display: flex;
     flex-direction: column;
@@ -14,24 +15,23 @@
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.image {
+.card__image {
     display: flex;
     position: relative;
 }
 
-.img {
+img {
     width: 240px;
     height: 240px;
 }
 
-.content {
+.card__content {
     display: flex;
     flex-direction: column;
     width: 240px;
 }
 
-.description {
-    font-family: Inter;
+.content__description {
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -41,42 +41,33 @@
     min-height: 60px;
 }
 
-.price {
-    font-family: Inter;
+.content__price {
+    font-style: normal;
+    letter-spacing: -0.005em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-top: 24px;
 }
 
-.ant {
-    font-family: Inter;
-    font-style: normal;
+.price__previous {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-    letter-spacing: -0.005em;
     text-decoration-line: line-through;
     color: #B5B5B6;
 }
 
-.atu {
-    font-family: Inter;
-    font-style: normal;
+.price__current {
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    letter-spacing: -0.005em;
     color: #DA4B4F;
 }
 
-.pag {
-
-    font-family: Inter;
-    font-style: normal;
+.price__payment {
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    letter-spacing: -0.005em;
     color: #848587;
 }
