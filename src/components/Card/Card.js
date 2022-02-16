@@ -17,10 +17,13 @@ export default function Card ({product, handleSaved, handleCart}) {
                         R$ { parseFloat(product.previousPrice).toFixed(2) }
                     </span>
                     <span className='price__current'>
-                        R$ { parseFloat( product.currentPrice).toFixed(2) }
+                        R$ { parseFloat(product.currentPrice).toFixed(2) }
                     </span>
                     <span className='price__payment'>
-                        { `em até ${product.formPayment}x de ${product.currentPrice/product.formPayment} sem juros` }
+                        { `em até 
+                            ${product.formPayment}x de 
+                            ${parseFloat(product.currentPrice/product.formPayment).toFixed(2)} sem juros` 
+                        }
                     </span>
                 </div>
             </div>
