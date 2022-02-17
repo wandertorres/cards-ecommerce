@@ -1,76 +1,45 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './App.css';
-import db from './services/db';
-import Card from './components/Card/Card';
-import CardDetails from './components/CardDetails/CardDetails';
+import { Card } from './components/Card/Card';
 import { Product } from './types/Product';
-import { ProductProvider } from './context/ProductContext';
+import db from "./services/db";
+import { ProductContext, ProductProvider } from './context/ProductContext';
 
 function App() {
-    const [listProducts, setProductList] = useState<Product[]>([]);
-    const [listSaved, setListSaved] = useState<Product[]>([]);
-    const [cart, setCart] = useState<Product[]>([]);
-
-    const handleSaved = (id: number): void => {
-        let list: Product[] = [];
-        const aux: Product | undefined = listSaved.find((item: Product) => item.id === id);
-        
-        if(!aux) {
-            list = listProducts.filter((item: Product) => item.id === id);
-            setListSaved((prevState: Product[]) => ([...prevState, ...list]));
-        } else {
-            list = listSaved.filter((item: Product) => item.id !== id)
-            setListSaved(list);
-        }
-    }
-
-    const handleCart = (id: number): void => {
-        let list: Product[] = [];
-        const aux: Product | undefined = cart.find((item: Product) => item.id === id);
-        
-        if(!aux) {
-            list = listProducts.filter((item: Product) => item.id === id);
-            setCart((prevState: Product[]) => ([...prevState, ...list]));
-        } else {
-            list = cart.filter((item: Product) => item.id !== id)
-            setCart(list);
-        }
-    }
+    const { saved, cart } = useContext(ProductContext);
+    const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
-        const loadProducts = async () => {
+        const loadProducts = async (): Promise<void> => {
             const list: Product[] = db;
-            setProductList(list);
+            setProducts(list);
         }
 
         loadProducts();
-    }, []);
+    }, [products]);
 
     return (
         <ProductProvider>
             <main>
                 <h2>Todos os produtos</h2>
                 <section>
-                    {listProducts.map((item: Product) => 
-                        <Card 
-                            key={ item.id }
-                            product={ item } 
-                            handleSaved={ handleSaved } 
-                            handleCart={ handleCart } 
-                        />
-                    )}
+                    {products.map((product: Product) => (
+                        <Card key={ product.id } product={ product } />
+                    ))}
                 </section>
                 
                 <h2>Produtos salvos</h2>
                 <section>
-                    {listSaved.map((item: Product) => 
-                        <CardDetails key={ item.id } product={ item } />)}
+                    {saved.map((product: Product) => 
+                        <Card key={ product.id } product={ product } />
+                    )}
                 </section>
 
                 <h2>Carrinho</h2>
                 <section>
-                    {cart.map((item: Product) => 
-                    <CardDetails key={ item.id } product={ item } />)}
+                    {cart.map((product: Product) => 
+                        <Card key={ product.id } product={ product } />
+                    )}
                 </section>
             </main>
         </ProductProvider>
