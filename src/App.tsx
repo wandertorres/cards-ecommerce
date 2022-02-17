@@ -4,6 +4,7 @@ import db from './services/db';
 import Card from './components/Card/Card';
 import CardDetails from './components/CardDetails/CardDetails';
 import { Product } from './types/Product';
+import { ProductProvider } from './context/ProductContext';
 
 function App() {
     const [listProducts, setProductList] = useState<Product[]>([]);
@@ -46,31 +47,33 @@ function App() {
     }, []);
 
     return (
-        <main>
-            <h2>Todos os produtos</h2>
-            <section>
-                {listProducts.map((item: Product) => 
-                    <Card 
-                        key={ item.id }
-                        product={ item } 
-                        handleSaved={ handleSaved } 
-                        handleCart={ handleCart } 
-                    />
-                )}
-            </section>
-            
-            <h2>Produtos salvos</h2>
-            <section>
-                {listSaved.map((item: Product) => 
-                    <CardDetails key={ item.id } product={ item } />)}
-            </section>
+        <ProductProvider>
+            <main>
+                <h2>Todos os produtos</h2>
+                <section>
+                    {listProducts.map((item: Product) => 
+                        <Card 
+                            key={ item.id }
+                            product={ item } 
+                            handleSaved={ handleSaved } 
+                            handleCart={ handleCart } 
+                        />
+                    )}
+                </section>
+                
+                <h2>Produtos salvos</h2>
+                <section>
+                    {listSaved.map((item: Product) => 
+                        <CardDetails key={ item.id } product={ item } />)}
+                </section>
 
-            <h2>Carrinho</h2>
-            <section>
-                {cart.map((item: Product) => 
-                  <CardDetails key={ item.id } product={ item } />)}
-            </section>
-        </main>
+                <h2>Carrinho</h2>
+                <section>
+                    {cart.map((item: Product) => 
+                    <CardDetails key={ item.id } product={ item } />)}
+                </section>
+            </main>
+        </ProductProvider>
     );
 }
 
