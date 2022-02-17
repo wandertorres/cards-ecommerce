@@ -1,4 +1,6 @@
-const db = [
+import { Product } from "../types/Product";
+
+const db: Product[] = [
     {
         id: 1,
         description: 'Monitor LED 27 Gamer Curvo Samsung 1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50',
