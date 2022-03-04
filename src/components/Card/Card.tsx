@@ -4,11 +4,7 @@ import Button from '../Button/Button';
 import Wishlist from '../Wishlist/Wishlist';
 import './Card.css';
 
-type Props = {
-    product: Product,
-}
-
-export function Card({ product }: Props): JSX.Element {
+export function Card(product: Product): JSX.Element {
     const [listSaved, setListSaved] = useState<Product[]>([]);
     const [cart, setCart] = useState<Product[]>([]);
 
@@ -62,7 +58,7 @@ export function Card({ product }: Props): JSX.Element {
                 </div>
             </div>
             
-            <Button id={product.id} handleCart={handleCart} />
+            <Button { ...product.id } handleCart />
         </div>
     );
 }

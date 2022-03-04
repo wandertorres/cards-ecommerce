@@ -1,45 +1,32 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
+import db from "./services/db";
 import { Card } from './components/Card/Card';
 import { Product } from './types/Product';
-import db from "./services/db";
-import { ProductContext, ProductProvider } from './context/ProductContext';
+import { ProductProvider } from './context/ProductContext';
 
 function App() {
-    const { saved, cart } = useContext(ProductContext);
-    const [products, setProducts] = useState<Product[]>([]);
+    const [allProducts, setAllProducts] = useState<Product[]>();
 
     useEffect(() => {
-        const loadProducts = async (): Promise<void> => {
-            const list: Product[] = db;
-            setProducts(list);
+        const getProducts = (): Product[] => {
+            const listProducts: Product[] = db;
+            return listProducts;
         }
 
-        loadProducts();
-    }, [products]);
+        setAllProducts(getProducts);
+    }, []);
 
     return (
         <ProductProvider>
             <main>
                 <h2>Todos os produtos</h2>
                 <section>
-                    {products.map((product: Product) => (
-                        <Card key={ product.id } product={ product } />
-                    ))}
-                </section>
-                
-                <h2>Produtos salvos</h2>
-                <section>
-                    {saved.map((product: Product) => 
-                        <Card key={ product.id } product={ product } />
-                    )}
-                </section>
-
-                <h2>Carrinho</h2>
-                <section>
-                    {cart.map((product: Product) => 
-                        <Card key={ product.id } product={ product } />
-                    )}
+                    {
+                        allProducts?.map((product: Product) => (
+                            <Card key={ product.id } { ...product } />
+                        ))
+                    }
                 </section>
             </main>
         </ProductProvider>

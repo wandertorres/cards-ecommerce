@@ -1,26 +1,32 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, SetStateAction, useEffect, useState } from "react";
 import { Product } from "../types/Product";
 
 interface ProductInterface {
-    saved: Product[];
-    cart: Product[];
+    savedProducts: Product[];
+    cartProducts: Product[];
+    setSavedProducts: React.Dispatch<SetStateAction<Product[]>>;
+    setCartProducts: React.Dispatch<SetStateAction<Product[]>>
 }
 
 const defaultProductContext: ProductInterface = {
-    saved: [],
-    cart: [],
+    savedProducts: [],
+    cartProducts: [],
+    setSavedProducts: () => {},
+    setCartProducts: () => {},
 }
 
 export const ProductContext = createContext<ProductInterface>(defaultProductContext);
 
 export const ProductProvider: React.FC = ({ children }) => {
-    const [saved, setSaved] = useState(defaultProductContext.saved);
-    const [cart, setCart] = useState(defaultProductContext.cart);
+    const [savedProducts, setSavedProducts] = useState(defaultProductContext.savedProducts);
+    const [cartProducts, setCartProducts] = useState(defaultProductContext.cartProducts);
 
     return(
         <ProductContext.Provider value={{
-            saved, 
-            cart
+            savedProducts, 
+            cartProducts,
+            setSavedProducts,
+            setCartProducts,
         }}>
             {children}
         </ProductContext.Provider>
