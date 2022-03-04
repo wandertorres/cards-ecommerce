@@ -2,12 +2,12 @@ import { useState } from 'react';
 import './Button.css';
 import { FaCheck } from 'react-icons/fa';
 
-export default function Button ({id, handleCart}) {
+export default function Button (id: number) {
     const [active, setActive] = useState(false);
     const [className, setClassName] = useState('button');
     const [title, setTitle] = useState('Adicionar');
 
-    const changeButton = (id) => {
+    const changeButton = (id: number) => {
         setActive(!active);
 
         if(active) {
@@ -18,7 +18,7 @@ export default function Button ({id, handleCart}) {
             setClassName('button active');
         }
 
-        handleCart(id);
+        //handleCart(id);
     }
 
     return (
