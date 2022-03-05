@@ -4,33 +4,22 @@ import { Product } from '../../types/Product';
 import './Button.css';
 
 export default function Button (product: Product) {
-    const { cartProducts, setCartProducts } = useContext(ProductContext);
-    const [active, setActive] = useState(false);
+    const { cartProducts, handleProducts } = useContext(ProductContext);
+    const [activeComponent, setActiveComponent] = useState(false);
     
     useEffect(() => {
-        cartProducts.map((cartProduct) => setActive(cartProduct.id === product.id));
+        cartProducts.map((cartProduct) => setActiveComponent(cartProduct.id === product.id));
     }, []);
-    
-    const handleCart = (): void => {
-        let listProducts: Product[] = cartProducts;
-        
-        if(active)  
-            listProducts = cartProducts.filter(filtredProduct => filtredProduct.id !== product.id);
-        else
-            listProducts.push(product);
-
-        setCartProducts(listProducts);
-    }
 
     return (
         <button 
-            className={ active ? "--active" : "" } 
+            className={ activeComponent ? "--activeComponent" : "" } 
             onClick={() => {
-                handleCart();
-                setActive(!active);
+                handleProducts(product, activeComponent, "cart");
+                setActiveComponent(!activeComponent);
             }}
         >
-            { active ? "Adicionado" : "Adicionar" } 
+            { activeComponent ? "Adicionado" : "Adicionar" } 
         </button>
     );
 }
