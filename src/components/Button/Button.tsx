@@ -1,19 +1,35 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ProductContext } from '../../context/ProductContext';
+import { Product } from '../../types/Product';
 import './Button.css';
 
-export default function Button (id: number) {
+export default function Button (product: Product) {
+    const { cartProducts, setCartProducts } = useContext(ProductContext);
     const [active, setActive] = useState(false);
+    
+    useEffect(() => {
+        cartProducts.map((cartProduct) => setActive(cartProduct.id === product.id));
+    }, []);
+    
+    const handleCart = (): void => {
+        let listProducts: Product[] = cartProducts;
+        
+        if(active)  
+            listProducts = cartProducts.filter(filtredProduct => filtredProduct.id !== product.id);
+        else
+            listProducts.push(product);
 
-    const changeButton = (id: number) => {
-        setActive(!active);
-
-        //handleCart(id);
+        setCartProducts(listProducts);
     }
 
     return (
         <button 
             className={ active ? "--active" : "" } 
-            onClick={() => changeButton(id)}>
+            onClick={() => {
+                handleCart();
+                setActive(!active);
+            }}
+        >
             { active ? "Adicionado" : "Adicionar" } 
         </button>
     );
