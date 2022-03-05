@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Product } from '../../types/Product';
 import Button from '../Button/Button';
 import Wishlist from '../Wishlist/Wishlist';
@@ -6,7 +6,6 @@ import './Card.css';
 
 export function Card(product: Product): JSX.Element {
     const [listSaved, setListSaved] = useState<Product[]>([]);
-    const [cart, setCart] = useState<Product[]>([]);
 
     const handleSaved = (id: number): void => {
         let list: Product[] = [];
@@ -18,19 +17,6 @@ export function Card(product: Product): JSX.Element {
         } else {
             list = listSaved.filter((item: Product) => item.id !== id)
             setListSaved(list);
-        }
-    }
-
-    const handleCart = (id: number): void => {
-        let list: Product[] = [];
-        const aux: Product | undefined = cart.find((item: Product) => item.id === id);
-        
-        if(!aux) {
-            //list = products.filter((item: Product) => item.id === id);
-            setCart((prevState: Product[]) => ([...prevState, ...list]));
-        } else {
-            list = cart.filter((item: Product) => item.id !== id)
-            setCart(list);
         }
     }
 
@@ -58,7 +44,7 @@ export function Card(product: Product): JSX.Element {
                 </div>
             </div>
             
-            <Button { ...product.id } handleCart />
+            <Button { ...product } />
         </div>
     );
 }
